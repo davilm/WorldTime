@@ -6,18 +6,27 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-  int counter = 0;
+  void getData() async {
+    String username = await Future.delayed(Duration(seconds: 3), () {
+      return 'yoshi';
+    });
+
+    String bio = await Future.delayed(Duration(seconds: 2), () {
+      return 'vegan, musician & egg collector';
+    });
+
+    print('$username - $bio');
+  }
 
   @override
   void initState() {
     super.initState();
-    print('initState function ran');
+    getData();
+    print('hey there!');
   }
 
   @override
   Widget build(BuildContext context) {
-    print('build function ran');
-
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -25,14 +34,6 @@ class _ChooseLocationState extends State<ChooseLocation> {
         title: Text('Choose a Location'),
         centerTitle: true,
         elevation: 0,
-      ),
-      body: RaisedButton(
-        onPressed: () {
-          setState(() {
-            counter += 1;
-          });
-        },
-        child: Text('counter is $counter'),
       ),
     );
   }
