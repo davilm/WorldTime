@@ -28,6 +28,7 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
+    // precacheImage(AssetImage("assets/night.png"), context);
     return Scaffold(
       backgroundColor: Colors.blue[900],
       body: Padding(
